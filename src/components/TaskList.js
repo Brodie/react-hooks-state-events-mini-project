@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import Task from "./Task";
 
-function TaskList({ tasks, filter }) {
-  const [newTaskList, setNewTasks] = useState(tasks);
-
+function TaskList({ tasks, filter, setNewTasks }) {
   function handleRemoveTask(event) {
     setNewTasks(
-      newTaskList.filter((task) => {
+      tasks.filter((task) => {
         return task.text !== event.target.parentElement.children[1].innerText;
       })
     );
   }
 
-  const ourTasks = newTaskList.filter((task) => {
+  const ourTasks = tasks.filter((task) => {
     if (filter === "All") {
       return true;
     }
