@@ -20,6 +20,7 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
       category: catValue,
     };
     onTaskFormSubmit(newTask);
+    setText("");
   }
 
   return (
